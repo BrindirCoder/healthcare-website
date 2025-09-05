@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Doctors - MediCare Hospital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center">
+                        <i class="fas fa-hospital text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold text-blue-600">MediCare</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-blue-600 transition">About Us</a>
+                    <a href="services.html" class="text-gray-600 hover:text-blue-600 transition">Services</a>
+                    <a href="doctors.html" class="text-blue-600 font-medium hover:text-blue-800 transition">Doctors</a>
+                    <a href="appointment.html" class="text-gray-600 hover:text-blue-600 transition">Appointment</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="block py-2 text-gray-600 hover:text-blue-600 transition">Home</a>
+                <a href="about.html" class="block py-2 text-gray-600 hover:text-blue-600 transition">About Us</a>
+                <a href="services.html" class="block py-2 text-gray-600 hover:text-blue-600 transition">Services</a>
+                <a href="doctors.html" class="block py-2 text-blue-600 font-medium">Doctors</a>
+                <a href="appointment.html" class="block py-2 text-gray-600 hover:text-blue-600 transition">Appointment</a>
+                <a href="contact.html" class="block py-2 text-gray-600 hover:text-blue-600 transition">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-blue-600 text-white py-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-4">Our Doctors</h1>
+            <p class="text-xl text-blue-100 max-w-3xl">Meet our team of highly qualified and experienced medical professionals dedicated to providing you with the best healthcare.</p>
+        </div>
+    </section>
+
+    <!-- Doctors Filter -->
+    <section class="py-8 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">All Doctors</button>
+                <button class="px-4 py-2 bg-white text-gray-700 rounded-lg hover:bg-gray-100 transition">Cardiology</button>
+                <button class="px-4 py-2 bg-white text-gray-700 rounded-lg hover:bg-gray-100 transition">Pediatrics</button>
+                <button class="px-4 py-2 bg-white text-gray-700 rounded-lg hover:bg-gray-100 transition">Neurology</button>
+                <button class="px-4 py-2 bg-white text-gray-700 rounded-lg hover:bg-gray-100 transition">Radiology</button>
+                <button class="px-4 py-2 bg-white text-gray-700 rounded-lg hover:bg-gray-100 transition">Surgery</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Grid -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Doctor Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/doctor1/600/600.jpg" alt="Dr. Sarah Johnson" class="w-full h-80 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Dr. Sarah Johnson</h3>
+                            <p class="text-blue-200">Cardiologist</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Dr. Johnson is a board-certified cardiologist with over 15 years of experience in treating complex heart conditions.</p>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i class="fas fa-graduation-cap text-blue-600 mr-2"></i>
+                            <span>MD, Harvard Medical School</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-briefcase text-blue-600 mr-2"></i>
+                            <span>15+ Years Experience</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="appointment.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Book Appointment</a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-200 transition">
+                                    <i class="fas fa-phone-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/doctor2/600/600.jpg" alt="Dr. Michael Chen" class="w-full h-80 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Dr. Michael Chen</h3>
+                            <p class="text-blue-200">Pediatrician</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Dr. Chen specializes in pediatric care with a focus on developmental disorders and childhood diseases.</p>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i class="fas fa-graduation-cap text-blue-600 mr-2"></i>
+                            <span>MD, Stanford University</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-briefcase text-blue-600 mr-2"></i>
+                            <span>12+ Years Experience</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="appointment.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Book Appointment</a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-200 transition">
+                                    <i class="fas fa-phone-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/doctor3/600/600.jpg" alt="Dr. Emily Rodriguez" class="w-full h-80 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Dr. Emily Rodriguez</h3>
+                            <p class="text-blue-200">Neurologist</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Dr. Rodriguez is an expert in neurology with specialized training in stroke treatment and epilepsy management.</p>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i class="fas fa-graduation-cap text-blue-600 mr-2"></i>
+                            <span>MD, Johns Hopkins University</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-briefcase text-blue-600 mr-2"></i>
+                            <span>18+ Years Experience</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="appointment.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Book Appointment</a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-200 transition">
+                                    <i class="fas fa-phone-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/doctor4/600/600.jpg" alt="Dr. James Wilson" class="w-full h-80 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Dr. James Wilson</h3>
+                            <p class="text-blue-200">Radiologist</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Dr. Wilson specializes in diagnostic radiology with expertise in MRI, CT scans, and interventional radiology.</p>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i class="fas fa-graduation-cap text-blue-600 mr-2"></i>
+                            <span>MD, Yale University</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-briefcase text-blue-600 mr-2"></i>
+                            <span>14+ Years Experience</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="appointment.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Book Appointment</a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-200 transition">
+                                    <i class="fas fa-phone-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 5 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/doctor5/600/600.jpg" alt="Dr. Lisa Thompson" class="w-full h-80 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Dr. Lisa Thompson</h3>
+                            <p class="text-blue-200">Surgeon</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Dr. Thompson is a board-certified surgeon specializing in minimally invasive and robotic surgical procedures.</p>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i class="fas fa-graduation-cap text-blue-600 mr-2"></i>
+                            <span>MD, Columbia University</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-briefcase text-blue-600 mr-2"></i>
+                            <span>20+ Years Experience</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="appointment.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Book Appointment</a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-200 transition">
+                                    <i class="fas fa-phone-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 6 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/doctor6/600/600.jpg" alt="Dr. Robert Davis" class="w-full h-80 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Dr. Robert Davis</h3>
+                            <p class="text-blue-200">Orthopedic Surgeon</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Dr. Davis specializes in orthopedic surgery with a focus on joint replacement and sports medicine.</p>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i class="fas fa-graduation-cap text-blue-600 mr-2"></i>
+                            <span>MD, Mayo Clinic School of Medicine</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-briefcase text-blue-600 mr-2"></i>
+                            <span>16+ Years Experience</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="appointment.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Book Appointment</a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-200 transition">
+                                    <i class="fas fa-phone-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">
+                    Load More Doctors
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Column 1 -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center">
+                            <i class="fas fa-hospital text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">MediCare</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Providing quality healthcare services with compassion and excellence since 1995.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="doctors.html" class="text-gray-400 hover:text-white transition">Doctors</a></li>
+                        <li><a href="appointment.html" class="text-gray-400 hover:text-white transition">Appointment</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Our Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Cardiology</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Pediatrics</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Neurology</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Radiology</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Surgery</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for health tips and updates.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg text-gray-800 w-full focus:outline-none">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 MediCare Hospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.flex.flex-wrap.justify-center.gap-4 button');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-blue-600', 'text-white');
+                    btn.classList.add('bg-white', 'text-gray-700');
+                });
+                
+                // Add active class to clicked button
+                this.classList.remove('bg-white', 'text-gray-700');
+                this.classList.add('bg-blue-600', 'text-white');
+                
+                // In a real application, this would filter the doctors based on the selected specialty
+                // For this demo, we'll just show an alert
+                const specialty = this.textContent.trim();
+                if (specialty !== 'All Doctors') {
+                    console.log(`Filtering by: ${specialty}`);
+                }
+            });
+        });
+
+        // Add animation to elements when they come into view
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Target elements to animate
+        document.querySelectorAll('.bg-white.rounded-xl').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

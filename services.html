@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - MediCare Hospital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center">
+                        <i class="fas fa-hospital text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold text-blue-600">MediCare</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-blue-600 transition">About Us</a>
+                    <a href="services.html" class="text-blue-600 font-medium hover:text-blue-800 transition">Services</a>
+                    <a href="doctors.html" class="text-gray-600 hover:text-blue-600 transition">Doctors</a>
+                    <a href="appointment.html" class="text-gray-600 hover:text-blue-600 transition">Appointment</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="block py-2 text-gray-600 hover:text-blue-600 transition">Home</a>
+                <a href="about.html" class="block py-2 text-gray-600 hover:text-blue-600 transition">About Us</a>
+                <a href="services.html" class="block py-2 text-blue-600 font-medium">Services</a>
+                <a href="doctors.html" class="block py-2 text-gray-600 hover:text-blue-600 transition">Doctors</a>
+                <a href="appointment.html" class="block py-2 text-gray-600 hover:text-blue-600 transition">Appointment</a>
+                <a href="contact.html" class="block py-2 text-gray-600 hover:text-blue-600 transition">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-blue-600 text-white py-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-4">Our Services</h1>
+            <p class="text-xl text-blue-100 max-w-3xl">We offer a comprehensive range of medical services to meet all your healthcare needs with the highest standards of quality and care.</p>
+        </div>
+    </section>
+
+    <!-- Services Categories -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Medical Departments</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our specialized departments are staffed by experienced professionals dedicated to providing exceptional care.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="p-6">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-heartbeat text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Cardiology</h3>
+                        <p class="text-gray-600 mb-4">Expert heart care with advanced diagnostic and treatment options for various cardiovascular conditions.</p>
+                        <ul class="text-gray-600 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Echocardiography</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Cardiac Catheterization</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Heart Surgery</li>
+                        </ul>
+                        <a href="appointment.html" class="text-blue-600 font-medium hover:text-blue-800 transition">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="p-6">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-baby text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Pediatrics</h3>
+                        <p class="text-gray-600 mb-4">Comprehensive healthcare services for infants, children, and adolescents in a child-friendly environment.</p>
+                        <ul class="text-gray-600 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Well-child Checkups</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Vaccinations</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Pediatric Emergency Care</li>
+                        </ul>
+                        <a href="appointment.html" class="text-blue-600 font-medium hover:text-blue-800 transition">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="p-6">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-brain text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Neurology</h3>
+                        <p class="text-gray-600 mb-4">Specialized care for disorders of the nervous system, including brain, spinal cord, and nerves.</p>
+                        <ul class="text-gray-600 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>EEG and EMG Testing</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Stroke Treatment</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Migraine Management</li>
+                        </ul>
+                        <a href="appointment.html" class="text-blue-600 font-medium hover:text-blue-800 transition">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="p-6">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-x-ray text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Radiology</h3>
+                        <p class="text-gray-600 mb-4">Advanced imaging services for accurate diagnosis and treatment planning using state-of-the-art technology.</p>
+                        <ul class="text-gray-600 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>CT Scans</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>MRI</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Ultrasound</li>
+                        </ul>
+                        <a href="appointment.html" class="text-blue-600 font-medium hover:text-blue-800 transition">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="p-6">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-procedures text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Surgery</h3>
+                        <p class="text-gray-600 mb-4">State-of-the-art surgical facilities and experienced surgeons for various surgical procedures.</p>
+                        <ul class="text-gray-600 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>General Surgery</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Minimally Invasive Surgery</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Robotic Surgery</li>
+                        </ul>
+                        <a href="appointment.html" class="text-blue-600 font-medium hover:text-blue-800 transition">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="p-6">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-pills text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Pharmacy</h3>
+                        <p class="text-gray-600 mb-4">24/7 pharmacy services with all essential medications available and expert pharmaceutical advice.</p>
+                        <ul class="text-gray-600 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Prescription Services</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Medication Counseling</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Home Delivery</li>
+                        </ul>
+                        <a href="appointment.html" class="text-blue-600 font-medium hover:text-blue-800 transition">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 7 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="p-6">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-tooth text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Dentistry</h3>
+                        <p class="text-gray-600 mb-4">Comprehensive dental care services including preventive, restorative, and cosmetic dentistry.</p>
+                        <ul class="text-gray-600 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>General Dentistry</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Orthodontics</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Oral Surgery</li>
+                        </ul>
+                        <a href="appointment.html" class="text-blue-600 font-medium hover:text-blue-800 transition">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 8 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="p-6">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-eye text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Ophthalmology</h3>
+                        <p class="text-gray-600 mb-4">Complete eye care services from routine examinations to advanced surgical treatments.</p>
+                        <ul class="text-gray-600 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Vision Testing</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Cataract Surgery</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Glaucoma Treatment</li>
+                        </ul>
+                        <a href="appointment.html" class="text-blue-600 font-medium hover:text-blue-800 transition">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 9 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="p-6">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-lungs text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Pulmonology</h3>
+                        <p class="text-gray-600 mb-4">Specialized care for respiratory conditions and diseases of the lungs and respiratory system.</p>
+                        <ul class="text-gray-600 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Pulmonary Function Tests</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Sleep Studies</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Asthma Management</li>
+                        </ul>
+                        <a href="appointment.html" class="text-blue-600 font-medium hover:text-blue-800 transition">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Services -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Specialized Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">In addition to our core departments, we offer specialized services to address specific healthcare needs.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex flex-col md:flex-row items-start gap-6 bg-blue-50 rounded-xl p-6 transition transform hover:-translate-y-2 hover:shadow-lg">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-dna text-2xl text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Genetic Counseling</h3>
+                        <p class="text-gray-600">Our genetic counseling services help individuals and families understand and adapt to the medical, psychological, and familial implications of genetic contributions to disease.</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row items-start gap-6 bg-green-50 rounded-xl p-6 transition transform hover:-translate-y-2 hover:shadow-lg">
+                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-user-md text-2xl text-green-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Telemedicine</h3>
+                        <p class="text-gray-600">Access our healthcare professionals from the comfort of your home through our secure telemedicine platform, available for consultations and follow-ups.</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row items-start gap-6 bg-blue-50 rounded-xl p-6 transition transform hover:-translate-y-2 hover:shadow-lg">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-ambulance text-2xl text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Emergency Services</h3>
+                        <p class="text-gray-600">Our 24/7 emergency department is equipped to handle all types of medical emergencies with a team of specialized emergency medicine physicians and nurses.</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row items-start gap-6 bg-green-50 rounded-xl p-6 transition transform hover:-translate-y-2 hover:shadow-lg">
+                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-home text-2xl text-green-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Home Healthcare</h3>
+                        <p class="text-gray-600">Our home healthcare services bring medical care to your doorstep, including nursing care, physical therapy, and medical social services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Column 1 -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center">
+                            <i class="fas fa-hospital text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">MediCare</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Providing quality healthcare services with compassion and excellence since 1995.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="doctors.html" class="text-gray-400 hover:text-white transition">Doctors</a></li>
+                        <li><a href="appointment.html" class="text-gray-400 hover:text-white transition">Appointment</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Our Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Cardiology</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Pediatrics</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Neurology</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Radiology</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Surgery</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for health tips and updates.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg text-gray-800 w-full focus:outline-none">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 MediCare Hospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Add animation to elements when they come into view
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Target elements to animate
+        document.querySelectorAll('.bg-white.rounded-xl, .bg-blue-50, .bg-green-50').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
